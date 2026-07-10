@@ -92,7 +92,7 @@ git diff --check
 1. Certifique-se de que a `main` local está atualizada.
 2. Crie uma branch de trabalho com a convenção de nome (ex: `feat/minha-feature`).
 3. Consulte a Issue correspondente no painel do GitHub.
-4. Leia atentamente a especificação da feature em [docs/specs/](file:///docs/specs/).
+4. Leia atentamente a especificação da feature em [docs/specs/](docs/specs/).
 5. Implemente o código limitando-se estritamente ao escopo definido na SPEC.
 6. Execute as validações locais (`npm run lint`, `npm run build`, `git diff --check`).
 7. Faça commits com mensagens semânticas (`feat: ...`, `fix: ...`).
@@ -100,11 +100,11 @@ git diff --check
 9. Faça as correções solicitadas na mesma branch do PR.
 10. Aguarde aprovação final antes de realizar o merge.
 
-Para detalhes completos sobre a governança e padrões de codificação, consulte o [CONTRIBUTING.md](file:///CONTRIBUTING.md).
+Para detalhes completos sobre a governança e padrões de codificação, consulte o [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
 ## 📂 Links e Documentação de Referência
 
-- **Roadmap do Projeto:** [docs/ROADMAP_DESENVOLVIMENTO_EQUIPE_IA_SDD.md](file:///docs/ROADMAP_DESENVOLVIMENTO_EQUIPE_IA_SDD.md)
-- **Especificação Técnica da Fundação (Fase 0):** [docs/specs/SDD-000_FUNDACAO_DO_PROJETO.md](file:///docs/specs/SDD-000_FUNDACAO_DO_PROJETO.md)
+- **Roadmap do Projeto:** [docs/ROADMAP_DESENVOLVIMENTO_EQUIPE_IA_SDD.md](docs/ROADMAP_DESENVOLVIMENTO_EQUIPE_IA_SDD.md)
+- **Especificação Técnica da Fundação (Fase 0):** [docs/specs/SDD-000_FUNDACAO_DO_PROJETO.md](docs/specs/SDD-000_FUNDACAO_DO_PROJETO.md)
