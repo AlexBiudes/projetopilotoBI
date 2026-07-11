@@ -58,14 +58,14 @@ O agente futuro pode, **majoritariamente dentro de `src/features/github-flow/`**
 1. criar componentes React/TypeScript que compõem o módulo educacional de GitHub Flow;
 2. criar estilos específicos da feature (arquivo próprio, ou classes escopadas — evitar reescrever `src/styles/index.css` global);
 3. criar conteúdo textual, ilustrações em SVG/JSX e diagramas do fluxo conforme a seção 10 desta SPEC;
-4. adicionar uma rota/aba de navegação mínima para expor o módulo (ver seção 16 — risco de colisão);
+4. adicionar uma rota/aba de navegação mínima para expor o módulo (ver seção 15 — risco de colisão);
 5. escrever testes locais relevantes para os componentes criados, se houver infraestrutura de testes disponível no momento da execução.
 
 ### Fora de escopo
 
 - qualquer alteração em `src/features/fundamentos-git/`;
 - implementação de conteúdo ou funcionalidades da SDD-001;
-- refatoração de `AppShell.tsx`, `App.tsx`, `HomePage.tsx`, `RoadmapPage.tsx` ou `MethodologyPage.tsx` além do mínimo estritamente necessário para pendurar a nova aba/rota (ver seção 6, item 4, e seção 16);
+- refatoração de `AppShell.tsx`, `App.tsx`, `HomePage.tsx`, `RoadmapPage.tsx` ou `MethodologyPage.tsx` além do mínimo estritamente necessário para pendurar a nova aba/rota (ver seção 6, item 4, e seção 15);
 - alteração de dependências no `package.json` sem necessidade comprovada e justificada;
 - redesenho visual global, troca de framework, ou alterações de tema/paleta em `src/styles/index.css`;
 - criação de backend, autenticação, banco de dados ou APIs;
@@ -84,7 +84,7 @@ src/features/github-flow/
 └── github-flow.css             (estilos escopados da feature, se necessário)
 ```
 
-Arquivos fora deste diretório só podem ser tocados conforme a seção 16 (regra de isolamento) e devem ser reportados explicitamente na devolutiva.
+Arquivos fora deste diretório só podem ser tocados conforme a seção 15 (regra de isolamento) e devem ser reportados explicitamente na devolutiva.
 
 ---
 
