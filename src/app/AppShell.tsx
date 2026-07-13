@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react'
 
 interface AppShellProps {
-  activeTab: 'welcome' | 'roadmap' | 'methodology' | 'fundamentos-git'
-  setActiveTab: (tab: 'welcome' | 'roadmap' | 'methodology' | 'fundamentos-git') => void
+  activeTab: 'welcome' | 'roadmap' | 'methodology' | 'github-flow' | 'fundamentos-git'
+  setActiveTab: (tab: 'welcome' | 'roadmap' | 'methodology' | 'github-flow' | 'fundamentos-git') => void
   children: ReactNode
 }
 
@@ -37,6 +37,13 @@ export default function AppShell({ activeTab, setActiveTab, children }: AppShell
             Metodologia
           </button>
           <button
+            className={`btn ${activeTab === 'github-flow' ? 'btn-primary' : 'btn-secondary'}`}
+            onClick={() => setActiveTab('github-flow')}
+            style={{ padding: '0.4rem 1rem', fontSize: '0.85rem' }}
+          >
+            GitHub Flow
+          </button>
+          <button
             className={`btn ${activeTab === 'fundamentos-git' ? 'btn-primary' : 'btn-secondary'}`}
             onClick={() => setActiveTab('fundamentos-git')}
             style={{ padding: '0.4rem 1rem', fontSize: '0.85rem' }}
@@ -56,6 +63,7 @@ export default function AppShell({ activeTab, setActiveTab, children }: AppShell
           <a href="https://github.com/AlexBiudes/projetopilotoBI" target="_blank" className="footer-link">GitHub</a>
           <a href="#" className="footer-link" onClick={(e) => { e.preventDefault(); setActiveTab('roadmap'); }}>Roadmap</a>
           <a href="#" className="footer-link" onClick={(e) => { e.preventDefault(); setActiveTab('methodology'); }}>Metodologia</a>
+          <a href="#" className="footer-link" onClick={(e) => { e.preventDefault(); setActiveTab('github-flow'); }}>GitHub Flow</a>
         </div>
       </footer>
     </div>
