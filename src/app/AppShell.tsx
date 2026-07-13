@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react'
 
 interface AppShellProps {
-  activeTab: 'welcome' | 'roadmap' | 'methodology' | 'github-flow'
-  setActiveTab: (tab: 'welcome' | 'roadmap' | 'methodology' | 'github-flow') => void
+  activeTab: 'welcome' | 'roadmap' | 'methodology' | 'github-flow' | 'fundamentos-git'
+  setActiveTab: (tab: 'welcome' | 'roadmap' | 'methodology' | 'github-flow' | 'fundamentos-git') => void
   children: ReactNode
 }
 
@@ -29,7 +29,7 @@ export default function AppShell({ activeTab, setActiveTab, children }: AppShell
           >
             Roadmap
           </button>
-          <button 
+          <button
             className={`btn ${activeTab === 'methodology' ? 'btn-primary' : 'btn-secondary'}`}
             onClick={() => setActiveTab('methodology')}
             style={{ padding: '0.4rem 1rem', fontSize: '0.85rem' }}
@@ -42,6 +42,13 @@ export default function AppShell({ activeTab, setActiveTab, children }: AppShell
             style={{ padding: '0.4rem 1rem', fontSize: '0.85rem' }}
           >
             GitHub Flow
+          </button>
+          <button
+            className={`btn ${activeTab === 'fundamentos-git' ? 'btn-primary' : 'btn-secondary'}`}
+            onClick={() => setActiveTab('fundamentos-git')}
+            style={{ padding: '0.4rem 1rem', fontSize: '0.85rem' }}
+          >
+            Fundamentos de Git
           </button>
         </div>
       </header>
