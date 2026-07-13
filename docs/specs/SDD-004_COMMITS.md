@@ -57,7 +57,7 @@ Deve partir da `main` atualizada (pós-merge de SDD-001 e SDD-002). Nenhuma impl
 src/features/commits/
 ```
 
-O agente futuro deve trabalhar **majoritariamente dentro deste diretório**. Qualquer alteração fora dele deve seguir a regra de isolamento da seção 15.
+O agente futuro deve trabalhar **majoritariamente dentro deste diretório**. Qualquer alteração fora dele deve seguir a regra de isolamento da seção 16.
 
 ---
 
@@ -67,8 +67,8 @@ O agente futuro pode, majoritariamente dentro de `src/features/commits/`:
 
 1. criar componentes React/TypeScript que compõem o módulo educacional de Commits;
 2. criar estilos específicos da feature (arquivo próprio, ou classes escopadas — evitar reescrever `src/styles/index.css` global);
-3. criar conteúdo textual, ilustrações em SVG/JSX e o fluxo visual conforme a seção 12 desta SPEC;
-4. adicionar uma rota/aba de navegação mínima para expor o módulo (ver seção 15 — risco de colisão conhecido desde a Fase 1);
+3. criar conteúdo textual, ilustrações em SVG/JSX e o fluxo visual conforme a seção 11 desta SPEC;
+4. adicionar uma rota/aba de navegação mínima para expor o módulo (ver seção 16 — risco de colisão conhecido desde a Fase 1);
 5. escrever testes locais relevantes para os componentes criados, se houver infraestrutura de testes disponível no momento da execução.
 
 ### Fora de escopo
@@ -96,7 +96,7 @@ src/features/commits/
 └── commits.css                (estilos escopados da feature, se necessário)
 ```
 
-Arquivos fora deste diretório só podem ser tocados conforme a seção 15 (regra de isolamento) e devem ser reportados explicitamente na devolutiva.
+Arquivos fora deste diretório só podem ser tocados conforme a seção 16 (regra de isolamento) e devem ser reportados explicitamente na devolutiva.
 
 ---
 
@@ -106,7 +106,7 @@ O módulo deve:
 
 1. ser acessível a partir da navegação principal da aplicação (nova aba/rota, análoga a `welcome`, `roadmap`, `methodology`, `github-flow`, `fundamentos-git` em `App.tsx`);
 2. renderizar sem erros e sem depender de backend, login ou dados externos;
-3. apresentar todo o conteúdo mínimo obrigatório listado na seção 12;
+3. apresentar todo o conteúdo mínimo obrigatório listado na seção 11;
 4. funcionar de forma independente do módulo Branches (SDD-003) — nenhuma dependência cruzada de componentes ou estado entre as duas features da Rodada 2A.
 
 ---

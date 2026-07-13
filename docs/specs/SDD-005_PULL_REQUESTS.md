@@ -57,7 +57,7 @@ Deve partir da `main` atualizada (pós-merge de SDD-003 e SDD-004). Nenhuma impl
 src/features/pull-requests/
 ```
 
-O agente futuro deve trabalhar **majoritariamente dentro deste diretório**. Qualquer alteração fora dele deve seguir a regra de isolamento da seção 15.
+O agente futuro deve trabalhar **majoritariamente dentro deste diretório**. Qualquer alteração fora dele deve seguir a regra de isolamento da seção 16.
 
 ---
 
@@ -67,8 +67,8 @@ O agente futuro pode, majoritariamente dentro de `src/features/pull-requests/`:
 
 1. criar componentes React/TypeScript que compõem o módulo educacional de Pull Requests;
 2. criar estilos específicos da feature (arquivo próprio, ou classes escopadas — evitar reescrever `src/styles/index.css` global);
-3. criar conteúdo textual, ilustrações em SVG/JSX e o fluxo visual conforme a seção 12 desta SPEC;
-4. adicionar uma rota/aba de navegação mínima para expor o módulo (ver seção 15 — risco de colisão conhecido);
+3. criar conteúdo textual, ilustrações em SVG/JSX e o fluxo visual conforme a seção 11 desta SPEC;
+4. adicionar uma rota/aba de navegação mínima para expor o módulo (ver seção 16 — risco de colisão conhecido);
 5. escrever testes locais relevantes para os componentes criados, se houver infraestrutura de testes disponível no momento da execução.
 
 ### Fora de escopo
@@ -96,7 +96,7 @@ src/features/pull-requests/
 └── pull-requests.css           (estilos escopados da feature, se necessário)
 ```
 
-Arquivos fora deste diretório só podem ser tocados conforme a seção 15 (regra de isolamento) e devem ser reportados explicitamente na devolutiva.
+Arquivos fora deste diretório só podem ser tocados conforme a seção 16 (regra de isolamento) e devem ser reportados explicitamente na devolutiva.
 
 ---
 
@@ -106,7 +106,7 @@ O módulo deve:
 
 1. ser acessível a partir da navegação principal da aplicação (nova aba/rota, análoga às demais abas já registradas em `App.tsx`);
 2. renderizar sem erros e sem depender de backend, login ou dados externos (nenhuma chamada real à API do GitHub);
-3. apresentar todo o conteúdo mínimo obrigatório listado na seção 12;
+3. apresentar todo o conteúdo mínimo obrigatório listado na seção 11;
 4. incluir um exercício ou simulação prática do ciclo de vida de um PR (interativo simples ou guiado em texto, sem necessidade de integração real com GitHub);
 5. funcionar de forma independente do módulo Code Review (SDD-006) — nenhuma dependência cruzada de componentes ou estado entre as duas features da Rodada 2B.
 
@@ -115,7 +115,7 @@ O módulo deve:
 ## 10. Requisitos de UX
 
 1. linguagem visual consistente com o restante da aplicação (cards, tipografia e paleta já usados nas páginas existentes), sem introduzir um novo sistema de design paralelo;
-2. o fluxo visual obrigatório (seção 12) deve ser apresentado como diagrama sequencial claro (JSX/CSS simples, sem necessidade de biblioteca de diagramação);
+2. o fluxo visual obrigatório (seção 11) deve ser apresentado como diagrama sequencial claro (JSX/CSS simples, sem necessidade de biblioteca de diagramação);
 3. distinção visual clara entre os estados de um PR (Draft, Ready for Review, mergeável, com conflito), por exemplo com cores ou badges diferentes;
 4. conteúdo organizado em seções navegáveis ou em scroll único, priorizando clareza para iniciantes;
 5. responsivo o suficiente para não quebrar em larguras menores, seguindo o padrão já usado nas páginas existentes.
