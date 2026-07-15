@@ -1,0 +1,428 @@
+/* Styles specific to the Git Branches Educational Module */
+
+.branches-page {
+  animation: branchesFadeIn 0.4s ease-out;
+}
+
+@keyframes branchesFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.branches-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .branches-intro-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Command Block Styling */
+.branches-command-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .branches-command-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.branches-command-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.branches-command-item .card-title {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 1.1rem;
+  color: #a5b4fc;
+}
+
+.branches-code-block {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.85rem;
+  color: #818cf8;
+  overflow-x: auto;
+  margin-top: 0.75rem;
+}
+
+/* Git Branches Simulator UI */
+.simulator-container {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-bottom: 4rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.simulator-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .simulator-layout {
+    grid-template-columns: 320px 1fr;
+  }
+}
+
+/* Simulator Control Panel */
+.simulator-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.control-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.control-input {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.control-input:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+}
+
+.simulator-actions-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.simulator-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+/* Terminal output panel */
+.simulator-terminal {
+  background: #05070f;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.8rem;
+  color: #10b981;
+  min-height: 120px;
+  max-height: 120px;
+  overflow-y: auto;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-line {
+  margin-bottom: 0.25rem;
+  line-height: 1.4;
+}
+
+.terminal-prompt {
+  color: var(--brand-secondary);
+}
+
+.terminal-success {
+  color: #10b981;
+}
+
+.terminal-info {
+  color: #60a5fa;
+}
+
+.terminal-warning {
+  color: #fbbf24;
+}
+
+/* Visual Graph Canvas */
+.simulator-graph-panel {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  overflow: hidden;
+  position: relative;
+  min-height: 380px;
+}
+
+.graph-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.graph-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: var(--bg-card);
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border-color);
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.graph-scroll-container {
+  flex-grow: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1.5rem;
+}
+
+.graph-svg-wrapper {
+  position: relative;
+  min-width: 800px;
+  height: 250px;
+}
+
+.graph-svg-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.graph-nodes-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+/* Commit visual node styles */
+.commit-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.commit-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 3px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: white;
+  transition: all 0.25s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.commit-node:hover .commit-dot {
+  transform: scale(1.2);
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+}
+
+.commit-node.active .commit-dot {
+  border-color: #60a5fa !important;
+  box-shadow: 0 0 15px rgba(96, 165, 250, 0.6);
+}
+
+.commit-hash {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-top: 0.4rem;
+  color: var(--text-secondary);
+  background: #0f172a;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+.commit-tooltip {
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.75rem;
+  width: 160px;
+  text-align: center;
+  font-size: 0.75rem;
+  box-shadow: var(--shadow-lg);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.commit-node:hover .commit-tooltip {
+  opacity: 1;
+}
+
+.commit-tooltip-msg {
+  color: var(--text-primary);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.2rem;
+}
+
+.commit-tooltip-branch {
+  color: var(--brand-secondary);
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+/* Branch label overlays */
+.branch-label {
+  position: absolute;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: white;
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.branch-pointer-arrow {
+  position: absolute;
+  font-size: 0.6rem;
+  color: var(--border-color);
+  pointer-events: none;
+}
+
+.branch-main-label {
+  background: #10b981;
+}
+
+.branch-feat-label {
+  background: var(--brand-primary);
+}
+
+/* Quick instructions box */
+.simulator-legend {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+/* Interactive scenario guides */
+.scenario-box {
+  background: rgba(99, 102, 241, 0.05);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.scenario-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #818cf8;
+}
+
+.scenario-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.scenario-step {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.scenario-step.completed {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
