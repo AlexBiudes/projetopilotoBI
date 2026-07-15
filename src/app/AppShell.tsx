@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react'
 
 interface AppShellProps {
-  activeTab: 'welcome' | 'roadmap' | 'methodology' | 'github-flow' | 'fundamentos-git'
-  setActiveTab: (tab: 'welcome' | 'roadmap' | 'methodology' | 'github-flow' | 'fundamentos-git') => void
+  activeTab: 'welcome' | 'roadmap' | 'methodology' | 'github-flow' | 'fundamentos-git' | 'commits'
+  setActiveTab: (tab: 'welcome' | 'roadmap' | 'methodology' | 'github-flow' | 'fundamentos-git' | 'commits') => void
   children: ReactNode
 }
 
@@ -14,7 +14,7 @@ export default function AppShell({ activeTab, setActiveTab, children }: AppShell
           <span className="logo-text">Projeto Piloto BI</span>
           <span className="badge">Fase 0 — Fundação</span>
         </div>
-        <div style={{ display: 'flex', gap: '0.5rem' }}>
+        <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
           <button 
             className={`btn ${activeTab === 'welcome' ? 'btn-primary' : 'btn-secondary'}`}
             onClick={() => setActiveTab('welcome')}
@@ -50,6 +50,13 @@ export default function AppShell({ activeTab, setActiveTab, children }: AppShell
           >
             Fundamentos de Git
           </button>
+          <button
+            className={`btn ${activeTab === 'commits' ? 'btn-primary' : 'btn-secondary'}`}
+            onClick={() => setActiveTab('commits')}
+            style={{ padding: '0.4rem 1rem', fontSize: '0.85rem' }}
+          >
+            Commits
+          </button>
         </div>
       </header>
 
@@ -64,6 +71,7 @@ export default function AppShell({ activeTab, setActiveTab, children }: AppShell
           <a href="#" className="footer-link" onClick={(e) => { e.preventDefault(); setActiveTab('roadmap'); }}>Roadmap</a>
           <a href="#" className="footer-link" onClick={(e) => { e.preventDefault(); setActiveTab('methodology'); }}>Metodologia</a>
           <a href="#" className="footer-link" onClick={(e) => { e.preventDefault(); setActiveTab('github-flow'); }}>GitHub Flow</a>
+          <a href="#" className="footer-link" onClick={(e) => { e.preventDefault(); setActiveTab('commits'); }}>Commits</a>
         </div>
       </footer>
     </div>
