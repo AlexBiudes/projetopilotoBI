@@ -5,9 +5,10 @@ import RoadmapPage from './pages/RoadmapPage'
 import MethodologyPage from './pages/MethodologyPage'
 import GithubFlowPage from './features/github-flow/GithubFlowPage'
 import FundamentosGitPage from './features/fundamentos-git/FundamentosGitPage'
+import BranchesPage from './features/branches/BranchesPage'
 
 function App() {
-  const [activeTab, setActiveTab] = useState<'welcome' | 'roadmap' | 'methodology' | 'github-flow' | 'fundamentos-git'>('welcome')
+  const [activeTab, setActiveTab] = useState<'welcome' | 'roadmap' | 'methodology' | 'github-flow' | 'fundamentos-git' | 'branches'>('welcome')
 
   return (
     <AppShell activeTab={activeTab} setActiveTab={setActiveTab}>
@@ -16,6 +17,7 @@ function App() {
       {activeTab === 'methodology' && <MethodologyPage />}
       {activeTab === 'github-flow' && <GithubFlowPage />}
       {activeTab === 'fundamentos-git' && <FundamentosGitPage />}
+      {activeTab === 'branches' && <BranchesPage />}
     </AppShell>
   )
 }
