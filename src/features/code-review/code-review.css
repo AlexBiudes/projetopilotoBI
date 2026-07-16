@@ -1,0 +1,516 @@
+/* Styles specific to the Code Review Educational Module */
+
+.code-review-page {
+  animation: crFadeIn 0.4s ease-out;
+}
+
+@keyframes crFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cr-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.cr-title {
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cr-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Severity Levels Grid */
+.severity-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .severity-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.severity-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.severity-card:hover {
+  transform: translateY(-2px);
+}
+
+.severity-card.critical { border-left: 4px solid #ef4444; }
+.severity-card.high { border-left: 4px solid #f97316; }
+.severity-card.medium { border-left: 4px solid #eab308; }
+.severity-card.low { border-left: 4px solid #3b82f6; }
+.severity-card.info { border-left: 4px solid #10b981; }
+
+.severity-card-title {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.severity-card.critical .severity-card-title { color: #ef4444; }
+.severity-card.high .severity-card-title { color: #f97316; }
+.severity-card.medium .severity-card-title { color: #eab308; }
+.severity-card.low .severity-card-title { color: #3b82f6; }
+.severity-card.info .severity-card-title { color: #10b981; }
+
+.severity-card-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+/* Sequential interactive flow */
+.cr-flow-container {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-bottom: 4rem;
+  box-shadow: var(--shadow-md);
+}
+
+.cr-flow-title {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cr-flow-scroll-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem 0;
+  overflow-x: auto;
+  min-width: 100%;
+}
+
+.cr-flow-node {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  min-width: 130px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.cr-flow-node.highlight {
+  border-color: var(--brand-primary);
+  background: rgba(99, 102, 241, 0.1);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
+}
+
+.cr-flow-node .node-step {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.cr-flow-node .node-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cr-flow-arrow {
+  color: var(--brand-secondary);
+  font-weight: 700;
+  font-size: 1.2rem;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+/* Simulator layout */
+.cr-simulator-container {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  margin-bottom: 4rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.cr-simulator-title {
+  font-family: var(--font-title);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.cr-simulator-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Interactive Code Diff Editor mockup */
+.code-diff-container {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #0d1117;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+.diff-header {
+  padding: 0.75rem 1.25rem;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.diff-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.diff-row {
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  transition: background 0.1s ease;
+}
+
+.diff-row:hover .add-comment-btn {
+  opacity: 1;
+}
+
+.line-number {
+  width: 50px;
+  text-align: right;
+  padding-right: 1rem;
+  color: var(--text-muted);
+  user-select: none;
+  background: rgba(255, 255, 255, 0.02);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.code-content {
+  padding-left: 1rem;
+  white-space: pre;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  min-height: 22px;
+}
+
+.diff-row.added {
+  background-color: rgba(46, 160, 67, 0.12);
+}
+.diff-row.added .code-content {
+  color: #3fb950;
+}
+.diff-row.added .line-number {
+  background-color: rgba(46, 160, 67, 0.06);
+  color: #2ea043;
+}
+
+.diff-row.removed {
+  background-color: rgba(248, 81, 73, 0.12);
+}
+.diff-row.removed .code-content {
+  color: #f85149;
+}
+.diff-row.removed .line-number {
+  background-color: rgba(248, 81, 73, 0.06);
+  color: #f85149;
+}
+
+/* Hover Add Comment Button */
+.add-comment-btn {
+  position: absolute;
+  left: 55px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--brand-primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 5;
+}
+
+.add-comment-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+  background: var(--brand-primary-hover);
+}
+
+/* Inline comment editor box */
+.inline-comment-editor {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  margin: 0.5rem 1rem 0.5rem 60px;
+  font-family: var(--font-sans);
+  animation: crFadeIn 0.2s ease-out;
+}
+
+.inline-comment-editor label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.inline-comment-editor textarea {
+  width: 100%;
+  min-height: 60px;
+  padding: 0.5rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+  resize: vertical;
+}
+
+.inline-comment-editor textarea:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+}
+
+.inline-comment-editor select {
+  padding: 0.4rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  margin-right: 1rem;
+}
+
+.inline-comment-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+/* Displayed comments in diff */
+.inline-comment-display {
+  background: var(--bg-card);
+  border-left: 3px solid var(--brand-secondary);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  margin: 0.4rem 1rem 0.4rem 60px;
+  font-family: var(--font-sans);
+  box-shadow: var(--shadow-sm);
+  animation: crFadeIn 0.2s ease-out;
+}
+
+.inline-comment-display.critical { border-left-color: #ef4444; }
+.inline-comment-display.high { border-left-color: #f97316; }
+.inline-comment-display.medium { border-left-color: #eab308; }
+.inline-comment-display.low { border-left-color: #3b82f6; }
+.inline-comment-display.info { border-left-color: #10b981; }
+
+.comment-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.comment-text {
+  font-size: 0.88rem;
+  color: var(--text-primary);
+}
+
+.comment-severity-tag {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  margin-left: 0.5rem;
+}
+
+.comment-severity-tag.critical { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+.comment-severity-tag.high { background: rgba(249, 115, 22, 0.15); color: #fb923c; }
+.comment-severity-tag.medium { background: rgba(234, 179, 8, 0.15); color: #facc15; }
+.comment-severity-tag.low { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+.comment-severity-tag.info { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+
+/* Review Submit Controls (mimicking GitHub review drawer) */
+.review-submit-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.review-submit-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.review-options-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.review-option-card {
+  flex: 1;
+  min-width: 150px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.review-option-card:hover {
+  border-color: var(--brand-primary);
+}
+
+.review-option-card.selected {
+  border-color: var(--brand-primary);
+  background: rgba(99, 102, 241, 0.05);
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.15);
+}
+
+.radio-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.review-option-card.selected .radio-circle {
+  border-color: var(--brand-primary);
+}
+
+.radio-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brand-primary);
+}
+
+.review-option-details h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.review-option-details p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+/* Timeline updates */
+.sim-timeline {
+  margin-top: 2rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.5rem;
+}
+
+.timeline-event-row {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.timeline-event-user {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.btn-delete-comment {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.75rem;
+  margin-left: 0.75rem;
+}
+
+.btn-delete-comment:hover {
+  color: #ef4444;
+}
