@@ -1,5 +1,5 @@
 interface HomePageProps {
-  setActiveTab: (tab: 'welcome' | 'roadmap' | 'methodology' | 'github-flow' | 'fundamentos-git') => void;
+  setActiveTab: (tab: 'welcome' | 'roadmap' | 'methodology' | 'github-flow' | 'fundamentos-git' | 'pull-requests') => void;
 }
 
 export default function HomePage({ setActiveTab }: HomePageProps) {
